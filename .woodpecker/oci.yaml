@@ -24,4 +24,4 @@ steps:
         from_secret: gh_token
       context: ${image}
       dockerfile: ${image}/Containerfile
-      platforms: linux/amd64,linux/arm64
+      platforms: linux/amd64
