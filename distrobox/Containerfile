@@ -4,7 +4,7 @@ COPY root /
 
 RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr sh
 RUN dnf upgrade -y
-RUN dnf install -y codium golang meson openssl-devel pnpm
+RUN dnf install -y cmake codium golang meson openssl-devel pnpm
 
 # don't clean up dnf metadata since distrobox is almost guaranteed to want to install something
 # and the image is built so regularly (thanks micro$oft) that it doesn't expire
