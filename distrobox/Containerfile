@@ -2,4 +2,4 @@ FROM registry.fedoraproject.org/fedora-toolbox:latest
 
 COPY root /
 
-RUN dnf install -y codium
+RUN dnf install -y codium golang meson openssl-devel pnpm
