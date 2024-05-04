@@ -2,7 +2,9 @@ FROM registry.fedoraproject.org/fedora-toolbox:latest
 
 COPY root /
 
-RUN dnf upgrade -y && \
+RUN ln -s /usr/bin/host-spawn /usr/bin/flatpak && \
+    ln -s /usr/bin/host-spawn /usr/bin/podman && \
+    dnf upgrade -y && \
     dnf install -y alsa-lib-devel cmake codium golang meson openssl-devel pnpm && \
     dnf clean -y all && \
     curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr sh
