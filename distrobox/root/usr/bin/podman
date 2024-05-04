@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec distrobox-host-exec podman "$@"
+exec host-spawn podman "$@"
