@@ -5,8 +5,7 @@ on:
     branches:
       - main
   schedule:
-    # dnf metadata (fedora-updates and vscodium) expires every 6 hours
-    - cron: 0 */6 * * *
+    - cron: 0 */12 * * *
 
 jobs:
   build-and-push-image:
