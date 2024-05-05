@@ -5,6 +5,6 @@ COPY root /
 RUN ln -s /usr/bin/host-spawn /usr/bin/flatpak && \
     ln -s /usr/bin/host-spawn /usr/bin/podman && \
     dnf upgrade -y && \
-    dnf install -y alsa-lib-devel cmake codium golang meson openssl-devel pnpm && \
+    dnf install -y alsa-lib-devel cmake codium golang meson openssl-devel pnpm reuse && \
     dnf clean -y all && \
     curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr sh
