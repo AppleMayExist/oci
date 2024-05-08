@@ -5,6 +5,6 @@ COPY root /
 RUN ln -s /usr/bin/host-spawn /usr/bin/flatpak && \
     ln -s /usr/bin/host-spawn /usr/bin/podman && \
     dnf upgrade -y && \
-    dnf install -y cmake codium golang meson pkgconfig\({alsa,dbus-1,glib-2.0,libsecret-1,openssl}\) pnpm reuse && \
+    dnf install -y cmake codium golang meson pkgconfig\({alsa,dbus-1,glib-2.0,libsecret-1,libsystemd,openssl}\) pnpm reuse && \
     dnf clean -y all && \
     curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr sh
