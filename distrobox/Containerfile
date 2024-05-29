@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-toolbox:latest
+FROM registry.fedoraproject.org/fedora-toolbox:41
 
 COPY root /
 
