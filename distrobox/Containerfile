@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-toolbox:latest
+FROM registry.fedoraproject.org/fedora-toolbox:41
 
 COPY root /
 
@@ -6,6 +6,6 @@ RUN ln -s /usr/bin/host-spawn /usr/bin/flatpak && \
     ln -s /usr/bin/host-spawn /usr/bin/podman && \
     rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && \
     dnf upgrade -y && \
-    dnf install -y codium golang meson pkgconfig\({alsa,dbus-1,glib-2.0,gstreamer-play-1.0,openssl}\) pipx pnpm reuse && \
+    dnf install -y codium meson pkgconfig\({alsa,dbus-1,glib-2.0,gstreamer-play-1.0,openssl}\) pipx python3-libdnf5 reuse && \
     dnf clean -y all && \
     curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr sh
