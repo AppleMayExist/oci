@@ -6,6 +6,7 @@ RUN ln -s /usr/bin/host-spawn /usr/bin/flatpak && \
     ln -s /usr/bin/host-spawn /usr/bin/podman && \
     rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && \
     dnf upgrade -y && \
-    dnf install -y codium meson pkgconfig\({alsa,dbus-1,glib-2.0,gstreamer-play-1.0,openssl}\) pipx python3-libdnf5 reuse && \
+    dnf install -y bandit black codium meson pipx pkgconfig\(openssl\) pylint python3-{flake8,mypy} reuse \
+        fish glibc-locale-source pinentry && \
     dnf clean -y all && \
     curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr sh
