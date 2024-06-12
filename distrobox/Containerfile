@@ -2,9 +2,7 @@ FROM registry.fedoraproject.org/fedora-toolbox:41
 
 COPY root /
 
-RUN ln -s /usr/bin/host-spawn /usr/bin/flatpak && \
-    ln -s /usr/bin/host-spawn /usr/bin/podman && \
-    rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && \
+RUN rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && \
     dnf upgrade -y && \
     dnf install -y codium pipx reuse \
         fish glibc-locale-source pinentry && \
