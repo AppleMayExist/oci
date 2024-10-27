@@ -3,7 +3,7 @@ name: Create and publish container image(s)
 on:
   push:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 0 * * 0
 
 jobs:
   build-and-push-image:
