@@ -4,6 +4,6 @@ COPY root /
 
 RUN rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && \
     dnf upgrade -y && \
-    dnf install -y ccache clang-tools-extra codium gcc gettext git-credential-libsecret meson pipx \
+    dnf install -y ccache clang-analyzer clang-tools-extra codium gcc gettext git-credential-libsecret meson pipx \
         fish glibc-locale-source pinentry && \
     dnf clean -y all
