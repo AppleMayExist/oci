@@ -3,7 +3,8 @@ FROM registry.fedoraproject.org/fedora-toolbox:41
 COPY root /
 
 RUN rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && \
-    dnf upgrade -y && \
     dnf install -y ccache clang-analyzer clang-tools-extra codium gcc-c++ gettext git-credential-libsecret meson pipx \
         fish glibc-locale-source pinentry && \
+    dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
+    dnf install -y rpmfusion-{,non}free-release-tainted
     dnf clean -y all
